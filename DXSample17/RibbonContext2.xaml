@@ -1,0 +1,19 @@
+﻿<local:CustomRibbonPageCategory x:Class="DXSample17.RibbonContext2"
+                                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                                xmlns:local="clr-namespace:DXSample17"
+                                xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+                                mc:Ignorable="d" 
+                                Caption="Context 2">
+    <dxr:RibbonPage Caption="General">
+        <dxr:RibbonPageGroup Caption="ABC">
+
+        </dxr:RibbonPageGroup>
+    </dxr:RibbonPage>
+    <dxr:RibbonPage Caption="Additional">
+
+    </dxr:RibbonPage>
+</local:CustomRibbonPageCategory>
+

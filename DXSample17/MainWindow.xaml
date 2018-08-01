@@ -1,0 +1,52 @@
+﻿<dx:ThemedWindow x:Class="DXSample17.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:dxSample17="clr-namespace:DXSample17"
+        Title="MainWindow" Height="350" Width="525">
+    <dxb:BarManager Name="BarManager">
+        <dxb:BarManager.Items>
+            <dxr:RibbonGalleryBarItem x:Name="ThemeSelectorItem">
+                <dxmvvm:Interaction.Behaviors>
+                    <dxr:RibbonGalleryItemThemeSelectorBehavior/>
+                </dxmvvm:Interaction.Behaviors>
+                <dxr:RibbonGalleryBarItem.Gallery>
+                    <dxb:Gallery ItemGlyphSize="24,24" HoverGlyphSize="48,48"/>
+                </dxr:RibbonGalleryBarItem.Gallery>
+            </dxr:RibbonGalleryBarItem>
+        </dxb:BarManager.Items>
+        <DockPanel>
+            <dxr:RibbonControl DockPanel.Dock="Top">
+                <dxr:RibbonControl.ApplicationMenu>
+                    <dxr:BackstageViewControl />
+                </dxr:RibbonControl.ApplicationMenu>
+                <dxr:RibbonDefaultPageCategory>
+                    <dxr:RibbonPage Caption="Actions">
+                        <dxr:RibbonPageGroup Caption="General">
+
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                    <dxr:RibbonPage Caption="Display">
+
+                        <dxr:RibbonPageGroup Caption="Appearance">
+                            <dxr:RibbonGalleryBarItemLink BarItemName="ThemeSelectorItem">
+                                <dxr:RibbonGalleryBarItemLink.CustomResources>
+                                    <ResourceDictionary>
+                                        <Style TargetType="{x:Type dxb:GalleryItemControl}">
+                                            <Setter Property="MinWidth" Value="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"/>
+                                        </Style>
+                                    </ResourceDictionary>
+                                </dxr:RibbonGalleryBarItemLink.CustomResources>
+                            </dxr:RibbonGalleryBarItemLink>
+                        </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                </dxr:RibbonDefaultPageCategory>
+                <dxSample17:RibbonContext1 />
+                <dxSample17:RibbonContext2 />
+            </dxr:RibbonControl>
+        </DockPanel>
+    </dxb:BarManager>
+</dx:ThemedWindow>
